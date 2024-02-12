@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "package-shipping-app"
+version = "0.1.0"
+description = ""
+authors = ["suer-tech <suer2505@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+uvicorn = {version = "^0.27.0.post1", extras = ["standard"]}
+fastapi = "^0.109.0"
+asyncmy = "^0.2.9"
+pydantic-settings = "^2.0.0"
+SQLAlchemy = "^2.0.25"
+alembic = "^1.13.1"
+pydantic = "^2.6.1"
+aiohttp = "^3.9.3"
+celery = "^5.3.6"
+redis = "^5.0.1"
+aioredis = "^2.0.1"
+flower = "^2.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
