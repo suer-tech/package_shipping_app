@@ -11,7 +11,7 @@ celery = Celery("celery_worker", broker="redis://redis:6379/0", backend="redis:/
 
 celery.conf.beat_schedule = {
     "run_periodic_task": {
-        "task": "celery_worker.periodic_start_update_shipping_cost",
+        "task": "price_updater.celery_worker.periodic_start_update_shipping_cost",
         "schedule": 300,
     },
 }
