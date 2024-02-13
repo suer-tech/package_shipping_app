@@ -1,3 +1,2 @@
 .venv
 ../docker/api.Dockerfile
-../docker/celery.Dockerfile
