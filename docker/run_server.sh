@@ -10,7 +10,7 @@ echo "Starting celery"
 
 celery -A price_updater.celery_worker.celery beat --loglevel=info --logfile=price_updater/celery.log &
 
-sleep 10
+sleep 5
 
 celery -A price_updater.celery_worker.celery worker
 
