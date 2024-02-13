@@ -30,3 +30,4 @@ async def update():
     async with db_helper.session_factory() as session:
         logging.info("async with db_helper.session_factory() as session")
         await asyncio.create_task(update_shipping_cost(session=session))
+
