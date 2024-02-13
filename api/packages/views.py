@@ -9,7 +9,7 @@ from api.packages.crud import ShippingCostState
 from models import db_helper
 from api.packages.schemas import Package, PackageResponse, PackageType, PackageUpdate
 from api.packages import crud
-
+from price_updater.celery_worker import update
 
 router = APIRouter(tags=["Packages"])
 
@@ -60,3 +60,9 @@ async def get_package_by_id(
     session: AsyncSession = Depends(db_helper.session_dependency),
 ):
     return await crud.get_package_by_id(package_id_in=package_id, session=session)
+
+
+@router.post("/force-run-shipping_cost_update/")
+async def force_run_cost_update():
+    await update()
+    return {"message": f"Periodic shipping_cost_update was forcefully run."}
